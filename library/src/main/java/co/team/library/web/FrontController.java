@@ -29,7 +29,7 @@ public class FrontController extends HttpServlet {
 	 //요청과 처리 명령어를 연결하는 부분
 	public void init(ServletConfig config) throws ServletException { 
 		map.put("/home.do", new HomeCommand());
-		
+		map.put(getServletInfo(), null);
 	}
 
 	

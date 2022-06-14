@@ -16,8 +16,6 @@
 				<div>
 					<table border="1">
 						<tr>
-							<th>글번호</th>
-							<td><input type="text" id="boardNumber" name="boardNumber"></td>
 							<th>작성자</th>
 							<td><input type="text" id="id" name="id"
 								required="required"></td>
@@ -27,12 +25,12 @@
 						</tr>
 						<tr>
 							<th>QnA 제목</th>
-							<td colspan="5"><input type="text" size="80" id="title"
+							<td colspan="3"><input type="text" size="66" id="title"
 								name="title" required="required"></td>
 						</tr>
 						<tr>
 							<th>내용</th>
-							<td colspan="5"><textarea rows="10" cols="90" id="content"
+							<td colspan="3"><textarea rows="6" cols="66" id="content"
 									name="content"></textarea></td>
 						</tr>
 					</table>

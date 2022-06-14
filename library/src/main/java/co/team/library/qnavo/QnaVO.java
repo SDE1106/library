@@ -2,22 +2,22 @@ package co.team.library.qnavo;
 
 import java.sql.Date;
 
-import lombok.Getter;
-import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
-@Getter
-@Setter
 public class QnaVO {
 	private int boardNumber;
 	private String id;
 	private String title;
 	private String content;
+	@JsonFormat(pattern = "yyyy-MM-dd",timezone = "Asia/Seoul")
 	private Date wdate;
+	private String fileName;
+	private String dirFileName;
 	
 	public int getBoardNumber() {
 		return boardNumber;
 	}
-	public void setBoardnumber(int boardNumber) {
+	public void setBoardNumber(int boardNumber) {
 		this.boardNumber = boardNumber;
 	}
 	public String getId() {
@@ -44,10 +44,18 @@ public class QnaVO {
 	public void setWdate(Date wdate) {
 		this.wdate = wdate;
 	}
-	
-	
-	
-	
-	
+	public String getFileName() {
+		return fileName;
+	}
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
+	public String getDirFileName() {
+		return dirFileName;
+	}
+	public void setDirFileName(String dirFileName) {
+		this.dirFileName = dirFileName;
+	}
+
 	
 }

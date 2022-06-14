@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="js/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 	<div align="center">
@@ -13,18 +14,19 @@
 			<h1>QnA 목록</h1>
 		</div>
 		<div>
-			<form id="frm" action="" method="POST">
+			<form id="frm" action="" method="post">
 				<select id="key" name="key">
 					<option value="1">전체</option>
-					<option value="1">작성자</option>
-					<option value="1">QnA 제목</option>
-					<option value="1">QnA 내용</option>
+					<option value="2">작성자</option>
+					<option value="3">QnA 제목</option>
+					<option value="4">QnA 내용</option>
 				</select>&nbsp; <input type="text" id="val" name="val">&nbsp; <input
-					type="button" value="검색" onclick="search()">
+					type="button" value="검색" onclick="search2()">
 			</form>
 		</div>
+		<br />
 		<div>
-			<table border="1">
+			<table border="1" id="ta">
 				<thead>
 					<tr>
 						<th width="100">게시글 번호</th>
@@ -37,11 +39,11 @@
 				<tbody id="tb">
 					<c:forEach items="${list }" var="qna">
 						<tr>
-							<td>${qna.boardNumber }</td>
-							<td>${qna.id }</td>
-							<td>${qna.title }</td>
+							<td align="center">${qna.boardNumber }</td>
+							<td align="center">${qna.id }</td>
+							<td align="center">${qna.title }</td>
 							<td>${qna.content }</td>
-							<td>${qna.wdate }</td>
+							<td align="center">${qna.wdate }</td>
 						</tr>
 					</c:forEach>
 				</tbody>
@@ -54,35 +56,38 @@
 		</div>
 	</div>
 	<script type="text/javascript">
-	function search(){
-		let param = 'key='+frm.key.value+"&val="+frm.val.value;
-		let fields = ['boardNumber', 'id', 'title', 'content', 'wdate']
-		let allTr = document.querySelectorAll('tbody>tr');
-		allTr.forEach(function (tr){
-			tr.remove();
-		});
-		
-		let list = document.querySelector('tbody');
-		
-		fetch('ajaxSearchList.do',{
-			method: 'POST',
-			headers: {'Content-type':'application/x-www-form-urlencoded'},
-			body: param
-		})
-		.then(response => response.json())
-		.then(data=>{
-			console.log(data);
-			data.forEach(d =>{
-				let tr = document.createElement('tr'); 
-				fields.forEach(f=>{ 
-					let td = document.createElement('td'); 
-					td.innerHTML = d[f];	
-					tr.appendChild(td);	
-				})
-				list.appendChild(tr); 
-			})
-		})
-	}
+		function search2() {
+			$.ajax({
+				url : "ajaxSearchList.do",
+				type : "POST",
+				data : {
+					"key" : $("#key").val(),
+					"val" : $("#val").val()
+				},
+				dataType : "json",
+				success : function(data) {
+					htmlConvert(data);
+				},
+				error : function() {
+					//실패시 구현
+				}
+			});
+		}
+
+		function htmlConvert(data) {
+			$("tbody").remove();
+			let tb = $("<tbody/>");
+			$.each(data, function(index, item) {
+				let tr = $("<tr />").append($("<td />").text(item.boardNumber),
+						$("<td />").text(item.id),
+						$("<td />").text(item.title),
+						$("<td />").text(item.content),
+						$("<td />").text(item.wdate),
+						$("<td />").text(item.fileName));
+				tb.append(tr);
+			});
+			$("#ta").append(tb);
+		}
 </script>
 </body>
 </html>

@@ -20,17 +20,17 @@ public class AjaxSearchList implements Command {
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
 		QnaService dao = new QnaServiceImpl();
 		List<QnaVO> list = new ArrayList<QnaVO>();
-		ObjectMapper mapper = new ObjectMapper();
+		ObjectMapper mapper = new ObjectMapper(); //json string으로 만들기
 		String key = request.getParameter("key");
 		String val = request.getParameter("val");
 		list = dao.qnaSearchList(key, val);
 		String jsonData = "";
 		try {
-			jsonData = mapper.writeValueAsString(list);
+			jsonData = mapper.writeValueAsString(list); //리스트를 json string으로
 		} catch (JsonProcessingException e) {
 			e.printStackTrace();
 		}
-		return "ajax" + jsonData;
+		return "ajax:" + jsonData;
 	}
 
 }

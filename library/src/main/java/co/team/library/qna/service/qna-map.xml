@@ -12,16 +12,16 @@
 		<if test="key == 2"> ID = #{val}</if>
 		<if test="key == 3"> TITLE LIKE '%'|| #{val} ||'%'</if>
 		<if test="key == 4"> CONTENT LIKE '%'|| #{val} ||'%'</if>
-		ORDER BY ID DESC
+		ORDER BY BOARDNUMBER DESC
 	</select>
 	
 	<select id="qnaSelect" resultType="co.team.library.qnavo.QnaVO">
-		SELECT * FROM QNA WHERE ID = #{ID}
+		SELECT * FROM QNA WHERE ID = #{id}
 	</select>
 	
 	<insert id="qnaInsert" parameterType="co.team.library.qnavo.QnaVO">
 		INSERT INTO QNA
-		VALUES(#{boardNumber},#{id},#{title},#{content},#{wdate})
+		VALUES(b_id.nextval, #{id},#{title},#{content},#{wdate},#{fileName},#{dirFileName})
 	</insert>
 	
 	<update id="qnaUpdate" parameterType="co.team.library.qnavo.QnaVO">

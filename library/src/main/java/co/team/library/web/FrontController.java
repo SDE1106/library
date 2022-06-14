@@ -11,10 +11,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import co.team.library.books.BooksCommand;
 import co.team.library.comm.Command;
 import co.team.library.contact.ContactCommand;
 import co.team.library.home.HomeCommand;
-import co.team.library.shop.Shopgrid;
 
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
@@ -31,6 +31,8 @@ public class FrontController extends HttpServlet {
 	 //요청과 처리 명령어를 연결하는 부분
 	public void init(ServletConfig config) throws ServletException { 
 		map.put("/home.do", new HomeCommand());		
+		map.put("/contact.do", new ContactCommand());
+		map.put("/books.do", new BooksCommand());
 	}
 
 	

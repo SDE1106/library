@@ -11,7 +11,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import co.team.library.books.BookCartCommand;
+import co.team.library.books.BookDetailsCommand;
+import co.team.library.books.BooksCommand;
+import co.team.library.books.RentalBookCommand;
 import co.team.library.comm.Command;
+import co.team.library.contact.ContactCommand;
 import co.team.library.home.HomeCommand;
 
 @WebServlet("*.do")
@@ -28,8 +33,13 @@ public class FrontController extends HttpServlet {
     
 	 //요청과 처리 명령어를 연결하는 부분
 	public void init(ServletConfig config) throws ServletException { 
-		map.put("/home.do", new HomeCommand());
-		map.put(getServletInfo(), null);
+		map.put("/home.do", new HomeCommand());		
+		map.put("/contact.do", new ContactCommand());
+		map.put("/books.do", new BooksCommand());
+		map.put("/bookDetails.do", new BookDetailsCommand());
+		map.put("/bookCart.do", new BookCartCommand());
+		map.put("/rentalBook.do", new RentalBookCommand());
+
 	}
 
 	
@@ -42,9 +52,8 @@ public class FrontController extends HttpServlet {
 		Command command = map.get(page); //맵에서 키를 던져주니 나한테 던져주는건 밸류(커맨드)를 돌아온다 즉 커맨드를 구한다
 		String viewPage = command.exec(request, response); // exec를 찾을때 맨끝에 String이 붙어서 나오는데 돌려받는값이 스트링인걸 알수있다.
 	
-		if(!viewPage.endsWith(".do")) { // viewResolve
-			viewPage = "/WEB-INF/views/" + viewPage + ".jsp"; // 중앙에 viewPage를 넣는 이유는 돌아오는 페이지가 viewPage라서 .. 보여줄 페이지를 구한다
-			/* viewPage = viewPage + ".tiles"; */
+		if(!viewPage.endsWith(".do")) {			
+			viewPage = viewPage + ".tiles";
 		
 		}
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage); // Dispatcher은 권한위임.

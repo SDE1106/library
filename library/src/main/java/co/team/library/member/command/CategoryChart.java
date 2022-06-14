@@ -15,4 +15,7 @@ public class CategoryChart implements Command {
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
 		// 도넛차트
 
+		return "administrator/categoryChart";
+	}
+
 }

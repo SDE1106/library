@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,15 +33,17 @@
 							</tr>
 						</thead>
 						<tbody>
+						<c:forEach items="${members }" var="m">
 								<tr>
-									<td>${id }</td>
-									<td>${password }</td>
-									<td>${name }</td>
-									<td>${tel }</td>
-									<td>${address }</td>
-									<td>${rentaldate }</td>
+									<td>${m.id }</td>
+									<td>${m.password }</td>
+									<td>${m.name }</td>
+									<td>${m.tel }</td>
+									<td>${m.address }</td>
+									<td>${m.rentaldate }</td>
 									<td><input type='button' value='추가' onclick='' /></td>
 								</tr>
+								</c:forEach>
 						</tbody>
 					</table>
 				</div>

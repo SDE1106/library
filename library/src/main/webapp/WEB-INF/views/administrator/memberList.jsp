@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,19 +9,15 @@
 </head>
 <body>
 
-	<div class="container-fluid">
-		<h1 class="h3 mb-2 text-gray-800">회원 목록보기</h1>
-		<p class="mb-4">
-			관리자만 볼 수 있는 회원정보 및 목록보기 게시판입니다.
-		</p>
-		<div class="card shadow mb-4">
-			<div class="card-header py-3">
-				<h6 class="m-0 font-weight-bold text-primary">회원 목록</h6>
+	<div>
+		<h1>회원 목록보기</h1>
+		<p>관리자만 볼 수 있는 회원정보 및 목록보기 게시판입니다.</p>
+		<div>
+			<div>
+				<h6>회원 목록</h6>
 			</div>
-			<div class="card-body">
-				<div class="table-responsive">
-					<table class="table table-bordered" id="dataTable" width="100%"
-						cellspacing="0">
+				<div>
+					<table border="1">
 						<thead>
 							<tr>
 								<th>아이디</th>
@@ -28,21 +25,20 @@
 								<th>이름</th>
 								<th>전화번호</th>
 								<th>주소</th>
-								<th>대여한 책</th>
 							</tr>
 						</thead>
 						<tbody>
-								<tr>
-									<td>${id }</td>
-									<td>${password }</td>
-									<td>${name }</td>
-									<td>${tel }</td>
-									<td>${address }</td>
-									<td>${booktitle }</td>
-								</tr>
+						<c:forEach items="${members }" var="m">
+							<tr>
+								<td>${m.id }</td>
+								<td>${m.password }</td>
+								<td>${m.name }</td>
+								<td>${m.tel }</td>
+								<td>${m.address }</td>
+							</tr>
+							</c:forEach>
 						</tbody>
 					</table>
-				</div>
 			</div>
 		</div>
 	</div>

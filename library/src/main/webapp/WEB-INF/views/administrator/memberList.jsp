@@ -29,8 +29,6 @@
 								<th>전화번호</th>
 								<th>주소</th>
 								<th>대여한 책</th>
-								<th>책 대여기간</th>
-								<th>블랙리스트</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -41,8 +39,6 @@
 									<td>${tel }</td>
 									<td>${address }</td>
 									<td>${booktitle }</td>
-									<td>${rentalcount }</td>
-									<td>${sdfsdf }</td>
 								</tr>
 						</tbody>
 					</table>

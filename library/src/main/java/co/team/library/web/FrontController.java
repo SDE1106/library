@@ -13,6 +13,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import co.team.library.comm.Command;
 import co.team.library.home.HomeCommand;
+import co.team.library.member.command.AddBlacklist;
+import co.team.library.member.command.Blacklist;
+import co.team.library.member.command.CategoryChart;
+import co.team.library.member.command.MemberList;
+import co.team.library.member.command.RentalChart;
 
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
@@ -29,6 +34,11 @@ public class FrontController extends HttpServlet {
 	 //요청과 처리 명령어를 연결하는 부분
 	public void init(ServletConfig config) throws ServletException { 
 		map.put("/home.do", new HomeCommand());
+		map.put("/addBlacklist.do", new AddBlacklist());
+		map.put("/blacklist.do", new Blacklist());
+//		map.put("/categoryChart.do", new CategoryChart());
+		map.put("/memberList.do", new MemberList());
+		map.put("/rentalChart.do", new RentalChart());
 		
 	}
 

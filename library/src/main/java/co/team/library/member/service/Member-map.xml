@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.team.library.member.service.MemberMapper">
+
+	<select id="memberSelectList" resultType="co.team.library.member.vo.MemberVO">
+		SELECT * FROM MEMBER
+	</select>
+	
+	<select id="memberSelect" resultType="co.team.library.member.vo.MemberVO">
+		SELECT * FROM MEMBER
+		WHERE MEMBERID = #{memberId}
+		<if test="password != null">
+			AND PASSWORD = #{password}
+		</if>
+	</select>
+	
+	<select id="memberBlackSelectList" resultType="co.team.library.member.vo.MemberVO">
+		SELECT * FROM MEMBER
+		WHERE BLACK = 1
+	</select>
+
+
+	<insert id="memberInsert" parameterType="co.team.library.member.vo.MemberVO">
+	
+	</insert>
+	
+	<update id="memberUpdate" parameterType="co.team.library.member.vo.MemberVO">
+	
+	</update>
+	
+	<update id="memberUpdateBlack" parameterType="co.team.library.member.vo.MemberVO">
+	UPDATE MEMBER SET BLACK = 1 WHERE ID = #{id}
+	</update>
+	
+	<update id="memberUpdatenormal" parameterType="co.team.library.member.vo.MemberVO">
+	UPDATE MEMBER SET BLACK = 0 WHERE ID = #{id}
+	</update>
+
+	<delete id="memberDelete" parameterType="co.team.library.member.vo.MemberVO">
+	
+	</delete>
+
+
+</mapper>

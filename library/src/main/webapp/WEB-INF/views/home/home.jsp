@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
 	<!-- Categories Section Begin -->
 	<section class="categories">
 		<div class="container">

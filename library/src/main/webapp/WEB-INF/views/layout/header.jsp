@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,43 +9,6 @@
 </head>
 <body>
 	<header class="header">
-		<div class="header__top">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-6 col-md-6">
-						<div class="header__top__left">
-							<ul>
-								<li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
-								<li>Free Shipping for all Order of $99</li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-lg-6 col-md-6">
-						<div class="header__top__right">
-							<div class="header__top__right__social">
-								<a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i
-									class="fa fa-twitter"></i></a> <a href="#"><i
-									class="fa fa-linkedin"></i></a> <a href="#"><i
-									class="fa fa-pinterest-p"></i></a>
-							</div>
-
-							<div class="header__top__right__language">
-								<img src="img/language.png" alt="">
-								<div>English</div>
-								<span class="arrow_carrot-down"></span>
-								<ul>
-									<li><a href="#">Spanis</a></li>
-									<li><a href="#">English</a></li>
-								</ul>
-							</div>
-							<div class="header__top__right__auth">
-								<a href="#"><i class="fa fa-user"></i> Login</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-3">
@@ -59,23 +23,28 @@
 							<li><a href="books.do">도서목록</a></li>
 							<li><a href="#">임시목록</a>
 								<ul class="header__menu__dropdown">
-									<li><a href="">도서상세</a></li>
-									<li><a href="">담아두기</a></li>
-									<li><a href="#">임시 목록C</a></li>
-									<li><a href="#">임시 목록D</a></li>
+									<li><a href="bookDetails.do">도서상세</a></li>
+									<li><a href="bookCart.do">담아두기</a></li>
+									<li><a href="rentalBook.do">대여하기</a></li>
 								</ul></li>
 							<li><a href="contact.do">Contact</a></li>
+							<li><a href="#">QnA</a></li>						
 						</ul>
 					</nav>
 				</div>
 				<div class="col-lg-3">
 					<div class="header__cart">
-						<ul>
-							<li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-							<li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
-						</ul>
-						<div class="header__cart__price">
-							item: <span>$150.00</span>
+						<c:if test="${not empty id }">
+							<ul>
+								<li><a href="#"><i class="fa fa-bell"></i> <span>1</span></a></li>
+								<li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+								<li><a href="#">마이페이지</a>
+							</ul>
+						</c:if>
+						<div class="header__top__right__auth">
+							<h1>
+								<a href="#"><i class="fa fa-user"></i>Login</a>
+							</h1>
 						</div>
 					</div>
 				</div>
@@ -101,10 +70,10 @@
 							<li><a href="#">종교서적</a></li>
 							<li><a href="#">인문사회</a></li>
 							<li><a href="#">순수문학</a></li>
-							<li><a href="#">예술</a></li>
-							<li><a href="#">언어</a></li>
+							<li><a href="#">예술서적</a></li>
+							<li><a href="#">언어관련</a></li>
 							<li><a href="#">일반문학</a></li>
-							<li><a href="#">역사</a></li>
+							<li><a href="#">역사서적</a></li>
 						</ul>
 					</div>
 				</div>
@@ -125,10 +94,10 @@
 							</div>
 							<div class="hero__search__phone__text">
 								<h5>+65 11.188.888</h5>
-								<span>support 24/7 time</span>
+								<span>문의 시간 인듯</span>
 							</div>
 						</div>
-					</div>					
+					</div>
 				</div>
 			</div>
 		</div>

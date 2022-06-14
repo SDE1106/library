@@ -11,7 +11,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import co.team.library.books.BookCartCommand;
+import co.team.library.books.BookDetailsCommand;
 import co.team.library.books.BooksCommand;
+import co.team.library.books.RentalBookCommand;
 import co.team.library.comm.Command;
 import co.team.library.contact.ContactCommand;
 import co.team.library.home.HomeCommand;
@@ -33,6 +36,9 @@ public class FrontController extends HttpServlet {
 		map.put("/home.do", new HomeCommand());		
 		map.put("/contact.do", new ContactCommand());
 		map.put("/books.do", new BooksCommand());
+		map.put("/bookDetails.do", new BookDetailsCommand());
+		map.put("/bookCart.do", new BookCartCommand());
+		map.put("/rentalBook.do", new RentalBookCommand());
 	}
 
 	

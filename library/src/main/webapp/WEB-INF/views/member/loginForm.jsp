@@ -76,11 +76,15 @@
 									</form>
 									<hr>
 									<div class="text-center">
-										<a class="small" href="forgot-password.html">Forgot
-											Password?</a>
+										<a class="small" href="findId.do">아이디 찾기
+											</a>
 									</div>
 									<div class="text-center">
-										<a class="small" href="register.html">Create an Account!</a>
+										<a class="small" href="forgot-password.html">
+											비밀번호 찾기</a>
+									</div>
+									<div class="text-center">
+										<a class="small" href="register.html">회원가입</a>
 									</div>
 								</div>
 							</div>

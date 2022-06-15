@@ -18,6 +18,17 @@ import co.team.library.books.RentalBookCommand;
 import co.team.library.comm.Command;
 import co.team.library.contact.ContactCommand;
 import co.team.library.home.HomeCommand;
+import co.team.library.member.command.AddBlacklist;
+import co.team.library.member.command.Blacklist;
+import co.team.library.member.command.FindId;
+import co.team.library.member.command.FindIdResult;
+import co.team.library.member.command.FindPw;
+import co.team.library.member.command.FindPwResult;
+import co.team.library.member.command.Login;
+import co.team.library.member.command.LoginForm;
+import co.team.library.member.command.Logout;
+import co.team.library.member.command.MemberList;
+import co.team.library.member.command.RentalChart;
 
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
@@ -39,10 +50,29 @@ public class FrontController extends HttpServlet {
 		map.put("/bookDetails.do", new BookDetailsCommand());
 		map.put("/bookCart.do", new BookCartCommand());
 		map.put("/rentalBook.do", new RentalBookCommand());
-		map.put("/mypageHome.do", new MypageHomeCommand());
-		map.put("/myInfo.do", new MyInfoCommand());
-		map.put("/nowRentalList.do", new NowRentalListCommand());
-		map.put("/myRentalList.do", new MyRentalListCommand());
+		/*
+		 * map.put("/mypageHome.do", new MypageHomeCommand()); map.put("/myInfo.do", new
+		 * MyInfoCommand()); map.put("/nowRentalList.do", new NowRentalListCommand());
+		 * map.put("/myRentalList.do", new MyRentalListCommand());
+		 */
+		
+		//로그인
+		map.put("/login.do", new Login());
+		map.put("/loginForm.do", new LoginForm());
+		map.put("/logout.do", new Logout());
+		map.put("/findId.do", new FindId());
+		map.put("/findIdResult.do", new FindIdResult());
+		map.put("/findPw.do", new FindPw());
+		map.put("/findPwResult.do", new FindPwResult());
+		
+		
+		  //관리자
+		map.put("/addBlacklist.do", new AddBlacklist());
+		 map.put("/blackList.do", new Blacklist()); 
+//		/* map.put("/categoryChart.do" new CategoryChart()); */
+		 map.put("/memberList.do", new MemberList());
+		  map.put("/rentalChart.do", new RentalChart());
+		 
 
 	}
 

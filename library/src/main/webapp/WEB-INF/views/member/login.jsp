@@ -7,11 +7,16 @@
 <title>Insert title here</title>
 </head>
 <body>
+	
+
 	<div align="center">
 		<div>
-			<h1>${message }</h1>
+			
 		</div>
 	</div>
-
+<script>
+alert('아이디 또는 패스워드가 일치하지 않습니다.');
+location.href='loginForm.do';
+</script>
 </body>
 </html>

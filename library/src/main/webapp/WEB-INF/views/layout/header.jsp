@@ -36,16 +36,19 @@
 					<div class="header__cart">
 						<c:if test="${not empty id }">
 							<ul>
-								<li><a href="#"><i class="fa fa-bell"></i> <span>1</span></a></li>
-								<li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+								<li><a href="#"><i class="fa fa-bell"></i> <span>1</span></a></li>								
 								<li><a href="#">마이페이지</a>
+								<li> ${name }님</li>
+								<li><a href="logout.do" id='Logout'>로그아웃</a>								
 							</ul>
 						</c:if>
+						<c:if test="${empty id }">
 						<div class="header__top__right__auth">
 							<h1>
-								<a href="#"><i class="fa fa-user"></i>Login</a>
+								<a href="loginForm.do"><i class="fa fa-user"></i>Login</a>
 							</h1>
 						</div>
+						</c:if>
 					</div>
 				</div>
 			</div>

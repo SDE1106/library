@@ -18,6 +18,8 @@ import co.team.library.books.RentalBookCommand;
 import co.team.library.comm.Command;
 import co.team.library.contact.ContactCommand;
 import co.team.library.home.HomeCommand;
+import co.team.library.member.command.LoginForm;
+import co.team.library.member.command.Logout;
 
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
@@ -38,12 +40,9 @@ public class FrontController extends HttpServlet {
 		map.put("/books.do", new BooksCommand());
 		map.put("/bookDetails.do", new BookDetailsCommand());
 		map.put("/bookCart.do", new BookCartCommand());
-		map.put("/rentalBook.do", new RentalBookCommand());
-		map.put("/mypageHome.do", new MypageHomeCommand());
-		map.put("/myInfo.do", new MyInfoCommand());
-		map.put("/nowRentalList.do", new NowRentalListCommand());
-		map.put("/myRentalList.do", new MyRentalListCommand());
-
+		map.put("/rentalBook.do", new RentalBookCommand());	
+		map.put("/loginForm.do", new LoginForm());
+		map.put("/logout.do", new Logout());
 	}
 
 	

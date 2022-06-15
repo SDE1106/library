@@ -6,10 +6,8 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import co.edu.study.notice.service.NoticeService;
-import co.edu.study.notice.serviceImpl.NoticeServiceImpl;
-import co.edu.study.notice.vo.NoticeVO;
 import co.team.library.comm.Command;
+import co.team.library.member.vo.MemberVO;
 
 public class MemberList implements Command {
 

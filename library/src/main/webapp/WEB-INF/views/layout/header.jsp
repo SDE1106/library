@@ -36,16 +36,20 @@
 					<div class="header__cart">
 						<c:if test="${not empty id }">
 							<ul>
-								<li><a href="#"><i class="fa fa-bell"></i> <span>1</span></a></li>
-								<li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+								<li><a href="#"><i class="fa fa-bell"></i> <span>1</span></a></li>								
 								<li><a href="#">마이페이지</a>
+								<li>${id }
+								<li><a href="logout.do">Logout</a>
 							</ul>
 						</c:if>
+						<c:if test="${empty id }">
 						<div class="header__top__right__auth">
-							<h1>
-								<a href="#"><i class="fa fa-user"></i>Login</a>
-							</h1>
+							<ul>							
+								<li><a href="loginForm.do"><i class="fa fa-user"></i>Login</a></li>
+								<li><a href="#">Join</a></li>
+							</ul>
 						</div>
+						</c:if>
 					</div>
 				</div>
 			</div>
@@ -93,8 +97,8 @@
 								<i class="fa fa-phone"></i>
 							</div>
 							<div class="hero__search__phone__text">
-								<h5>+65 11.188.888</h5>
-								<span>문의 시간 인듯</span>
+								<h5>(053)206-5798</h5>
+								<span>문의시간 - 09:00 ~ 18:00 </span>
 							</div>
 						</div>
 					</div>

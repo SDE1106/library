@@ -29,6 +29,10 @@ import co.team.library.member.command.LoginForm;
 import co.team.library.member.command.Logout;
 import co.team.library.member.command.MemberList;
 import co.team.library.member.command.RentalChart;
+import co.team.library.mypage.command.MyInfoCommand;
+import co.team.library.mypage.command.MyRentalListCommand;
+import co.team.library.mypage.command.MypageHomeCommand;
+import co.team.library.mypage.command.NowRentalListCommand;
 
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {

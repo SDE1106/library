@@ -27,7 +27,7 @@
 									<li><a href="bookCart.do">담아두기</a></li>
 									<li><a href="rentalBook.do">대여하기</a></li>
 								</ul></li>
-							<li><a href="contact.do">Contact</a></li>
+							<li><a href="mypageHome.do">마이페이지</a></li>
 							<li><a href="#">QnA</a></li>						
 						</ul>
 					</nav>

@@ -9,8 +9,8 @@ public class RentalChart implements Command {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
-		// TODO Auto-generated method stub
-		return null;
+		// 도넛차트
+		return "administrator/rentalChart";
 	}
 
 }

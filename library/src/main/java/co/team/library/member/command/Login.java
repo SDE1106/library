@@ -20,12 +20,15 @@ public class Login implements Command{
 		vo.setPassword(request.getParameter("password"));
 		vo = dao.MemberSelect(vo);
 		
+		
 		if(vo != null) {
 			session.setAttribute("id", vo.getId());
 			session.setAttribute("name", vo.getName());
-			request.setAttribute("message", vo.getName()+"님 환영합니다!");
+			/* request.setAttribute("message", vo.getName()+"님 환영합니다!"); */
+			return "home/home";
 		}else {
-			request.setAttribute("message", "아이디 또는 패스워드가 일치하지 않습니다.");
+			/* request.setAttribute("message", "아이디 또는 패스워드가 일치하지 않습니다."); */
+			
 		}
 		
 		

@@ -19,7 +19,7 @@
     </environment>
   </environments>
   <mappers>
-     <mapper resource=""/>
-     <mapper resource=""/>
+     <mapper resource="co/team/library/member/service/Member-map.xml"/>
+     
   </mappers>
 </configuration>

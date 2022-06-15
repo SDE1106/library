@@ -1,16 +1,15 @@
-package co.team.library.member.command;
+package co.team.library.mypage.command;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.team.library.comm.Command;
 
-public class RentalChart implements Command {
+public class NowRentalListCommand implements Command {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
-		// 도넛차트
-		return "administrator/rentalChart";
+		return "mypage/nowRentalList";
 	}
 
 }

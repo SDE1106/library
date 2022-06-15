@@ -7,16 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-	
-
-	<div align="center">
-		<div>
-			
+	<div class="container">
+		<div class="col-lg-12">
+			<div class="section-title from-blog__title">
+				<h2>나의 대출 이력</h2>
+			</div>
 		</div>
 	</div>
-<script>
-alert('아이디 또는 패스워드가 일치하지 않습니다.');
-location.href='loginForm.do';
-</script>
 </body>
 </html>

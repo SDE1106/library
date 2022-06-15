@@ -43,7 +43,7 @@
 									<div class="text-center">
 										<h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
 									</div>
-									<form class="user" action="login.do" method="post">
+									<form class="user" action="login.do" method="post" name="loginfindscreen" >
 										<div class="form-group">
 											<input type="email" class="form-control form-control-user"
 												id="id" name="id" aria-describedby="emailHelp"
@@ -62,7 +62,7 @@
 											</div>
 										</div>
 										<button type="submit"
-											class="btn btn-primary btn-user btn-block" value="login">로그인</button>
+											class="btn btn-primary btn-user btn-block" value="login" >로그인</button>
 										<!-- = <a href="index.html" class="btn btn-primary btn-user btn-block">
                                             Login
                                         </a> -->
@@ -76,11 +76,15 @@
 									</form>
 									<hr>
 									<div class="text-center">
-										<a class="small" href="forgot-password.html">Forgot
-											Password?</a>
+										<a class="small" href="findId.do">아이디 찾기
+											</a>
 									</div>
 									<div class="text-center">
-										<a class="small" href="register.html">Create an Account!</a>
+										<a class="small" href="findPw.do">
+											비밀번호 찾기</a>
+									</div>
+									<div class="text-center">
+										<a class="small" href="join.do">회원가입</a>
 									</div>
 								</div>
 							</div>
@@ -110,6 +114,5 @@
 	<!-- Page level custom scripts -->
 	<script src="js/demo/chart-area-demo.js"></script>
 	<script src="js/demo/chart-pie-demo.js"></script>
-	
 </body>
 </html>

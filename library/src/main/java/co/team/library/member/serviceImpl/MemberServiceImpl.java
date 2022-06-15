@@ -2,6 +2,7 @@ package co.team.library.member.serviceImpl;
 
 import java.util.List;
 
+
 import org.apache.ibatis.session.SqlSession;
 
 import co.team.library.comm.DataSource;
@@ -21,7 +22,7 @@ public class MemberServiceImpl implements MemberService{
 
 	@Override
 	public MemberVO MemberSelect(MemberVO vo) {
-		return map.memberSelect(vo);
+		return map.MemberSelect(vo);
 	}
 
 	@Override
@@ -38,6 +39,40 @@ public class MemberServiceImpl implements MemberService{
 	public int memberDelete(MemberVO vo) {
 		return map.memberDelete(vo);
 	}
+
+	
+
+	@Override
+	public String findId(MemberVO vo) {
+		System.out.println(vo.toString());
+		System.out.println(map.findId(vo));
+		return map.findId(vo);
+	}
+
+	@Override
+	public String findPw(MemberVO vo) {
+		return map.findPw(vo);
+	}
+
+	@Override
+	public int join(MemberVO vo) {
+		return map.join(vo);
+	}
+
+	@Override
+	public List<MemberVO> memberBlackSelectList() {
+		return map.memberBlackSelectList();
+	}
+	@Override
+	public int memberUpdateBlack(MemberVO vo) {
+		return map.memberUpdateBlack(vo);
+	}
+
+	@Override
+	public int memberUpdatenormal(MemberVO vo) {
+		return map.memberUpdatenormal(vo);
+	}
+
 
 	
 }

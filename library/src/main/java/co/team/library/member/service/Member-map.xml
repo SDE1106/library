@@ -15,7 +15,9 @@
 	</select>
 
 
+
 	<insert id="memberInsert">
+
 	
 	</insert>
 	

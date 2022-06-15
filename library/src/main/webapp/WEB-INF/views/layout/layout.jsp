@@ -11,6 +11,8 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title><tiles:getAsString name="title" /></title>
 
+<script src="https://kit.fontawesome.com/7b8c682cbd.js" crossorigin="anonymous"></script>
+
 <!-- Google Font -->
 <link
 	href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap"

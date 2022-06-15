@@ -71,6 +71,13 @@ public class FrontController extends HttpServlet {
 		map.put("/findPw.do", new FindPw());
 		map.put("/findPwResult.do", new FindPwResult());
 		
+		//QnA
+		map.put("/qnaInputForm.do", new QnaInputForm());
+		map.put("/qnaInput.do", new QnaInput());
+		map.put("/qnaList.do", new QnaList());
+		map.put("/qnaSelect.do", new QnaSelect());
+		map.put("/ajaxSearchList.do", new AjaxSearchList());
+		
 		
 		  //관리자
 		map.put("/addBlacklist.do", new AddBlacklist());

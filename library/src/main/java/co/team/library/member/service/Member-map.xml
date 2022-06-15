@@ -14,7 +14,6 @@
 		</if>
 	</select>
 
-
 	<insert id="studentInsert">
 	
 	</insert>

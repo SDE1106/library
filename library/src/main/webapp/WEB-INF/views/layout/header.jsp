@@ -8,6 +8,48 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<!-- Humberger Begin -->
+	<div class="humberger__menu__overlay"></div>
+	<div class="humberger__menu__wrapper">
+		<div class="humberger__menu__logo">
+			<a href="home.do"><img src="img/logo.png" alt=""></a>
+		</div>
+		<div class="humberger__menu__cart">
+			<ul>
+				<li><a href="#"><i class="fa fa-bell"></i> <span>1</span></a></li>&nbsp;&nbsp;&nbsp;
+				<li><a href="loginForm.do"><i class="fa fa-user"></i> Login</a></li>
+				<li><a href="#"><i class="fa fa-user-pen"></i> join</a></li>
+			</ul>			
+		</div>		
+		<nav class="humberger__menu__nav mobile-menu">
+			<ul>
+				<li class="active">
+				<li><a href="books.do">도서목록</a></li>
+				<li><a href="#">임시목록</a>
+					<ul class="header__menu__dropdown">
+						<li><a href="bookDetails.do">도서상세</a></li>
+						<li><a href="bookCart.do">담아두기</a></li>
+						<li><a href="rentalBook.do">대여하기</a></li>											
+					</ul></li>
+				<li><a href="contact.do">Contact</a></li>
+				<li><a href="#">QnA</a></li>
+			</ul>
+		</nav>
+		<div id="mobile-menu-wrap"></div>
+		<div class="header__top__right__social">
+			<a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i
+				class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-linkedin"></i></a>
+			<a href="#"><i class="fa fa-pinterest-p"></i></a>
+		</div>
+		<div class="humberger__menu__contact">
+			<ul>
+				<li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
+				<li>Free Shipping for all Order of $99</li>
+			</ul>
+		</div>
+	</div>
+	<!-- Humberger End -->
+
 	<header class="header">
 		<div class="container">
 			<div class="row">
@@ -19,7 +61,7 @@
 				<div class="col-lg-6">
 					<nav class="header__menu">
 						<ul>
-							<li class="active"><a href="/library">Home</a></li>
+							<li class="active">
 							<li><a href="books.do">도서목록</a></li>
 							<li><a href="#">임시목록</a>
 								<ul class="header__menu__dropdown">
@@ -28,7 +70,10 @@
 									<li><a href="rentalBook.do">대여하기</a></li>
 								</ul></li>
 							<li><a href="contact.do">Contact</a></li>
-							<li><a href="#">QnA</a></li>						
+							<li><a href="#">QnA</a></li>
+							<c:if test="${author eq 'ADMIN' }">
+								<li><a href="#">관리자메뉴</a></li>
+							</c:if>
 						</ul>
 					</nav>
 				</div>
@@ -36,19 +81,19 @@
 					<div class="header__cart">
 						<c:if test="${not empty id }">
 							<ul>
-								<li><a href="#"><i class="fa fa-bell"></i> <span>1</span></a></li>								
+								<li><a href="#"><i class="fa fa-bell"></i> <span>1</span></a></li>
 								<li><a href="#">마이페이지</a>
 								<li>${id }
 								<li><a href="logout.do">Logout</a>
 							</ul>
 						</c:if>
 						<c:if test="${empty id }">
-						<div class="header__top__right__auth">
-							<ul>							
-								<li><a href="loginForm.do"><i class="fa fa-user"></i>Login</a></li>
-								<li><a href="#">Join</a></li>
-							</ul>
-						</div>
+							<div class="header__top__right__auth">
+								<ul>
+									<li><a href="loginForm.do"><i class="fa fa-user"></i>Login</a></li>
+									<li><a href="#"><i class="fa fa-user-pen"></i>Join</a></li>
+								</ul>
+							</div>
 						</c:if>
 					</div>
 				</div>
@@ -60,7 +105,7 @@
 	</header>
 
 	<!-- Hero Section Begin -->
-	<section class="hero">
+	<section class="hero hero-normal">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-3">
@@ -98,7 +143,7 @@
 							</div>
 							<div class="hero__search__phone__text">
 								<h5>(053)206-5798</h5>
-								<span>문의시간 - 09:00 ~ 18:00 </span>
+								<span>AN 09:00 - PM 18:00 </span>
 							</div>
 						</div>
 					</div>
